@@ -9,6 +9,7 @@ refs.input.addEventListener(
     event.preventDefault();
     const searchQuery = event.target.value;
     refs.container.innerHTML = '';
+    refs.input.textContent = '';
     fetchCountry(searchQuery).then(updateMarkup);
   }, 500),
 );

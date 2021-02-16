@@ -24,12 +24,15 @@ input {
   display: inline-block;
   font-size: 20px;
   padding: 15px;
-  border-radius: 10px; 
+  border-radius: 10px;
   outline: transparent;
 }
 h1 {
   font-size: 55px;
   text-align: center;
+}
+img {
+  box-shadow: 4px -2px 23px 1px grey;
 }
 
 .contriesContainer {
