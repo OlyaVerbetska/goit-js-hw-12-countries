@@ -1,10 +1,13 @@
 import './styles.css';
 import debounce from 'lodash.debounce';
+import countriesList from './templates/countries-list.hbs';
+import oneCountry from './templates/one-country.hbs';
 
 //refs
 
 const refs = {
   input: document.querySelector('#countries'),
+  container: document.querySelector('.contriesContainer'),
 };
 
 //debounced input
@@ -19,23 +22,29 @@ refs.input.addEventListener(
 
 //fetch
 
-const searchQuery = 'latvia';
+const searchQuery = 'e';
 fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
   .then(response => response.json())
-  .then(data => Console(data));
+  .then(data => updateMarkup(data));
 
-function Console(data) {
-  console.log(data);
-  console.log(data.length);
+function updateMarkup(data) {
   if (data.length === 1) {
-      console.log(1);
-      return
+    MarkupOne(data);
+    return;
   }
   if (data.length > 10) {
-      console.log('many');
-      return
+    console.log('many');
+    return;
+  } else {
+    MarkupList(data);
   }
-  else {
-      console.log('list')
-  }
+}
+
+function MarkupOne(data) {
+  const markup = oneCountry(data);
+  refs.container.insertAdjacentHTML('beforeend', markup);
+}
+function MarkupList(data) {
+  const markup = countriesList(data);
+  refs.container.insertAdjacentHTML('beforeend', markup);
 }
