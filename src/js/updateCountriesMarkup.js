@@ -1,18 +1,22 @@
 import refs from '../js/refs.js';
 import countriesList from '../templates/countries-list.hbs';
 import oneCountry from '../templates/one-country.hbs';
+import error from './notifications.js';
 
 function updateMarkup(data) {
   if (data.length === 1) {
     MarkupOne(data);
     return;
   }
-  if (data.length > 2 && data.length < 10) {
+  if (data.length > 2 && data.length <= 10) {
     MarkupList(data);
-
     return;
-  } else {
-    console.log('many');
+  }
+  if (data.length > 10) {
+    error({
+      title: 'Too many matches found!',
+      text: 'Please, create more specific query',
+    });
   }
 }
 function MarkupOne(data) {

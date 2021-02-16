@@ -16,40 +16,35 @@ body {
   /*
    * CSS image reference example.
    */
-    background-image: url('./images/bg-pattern.png');
-    background-color: #D7D7D7;
+  background-image: url('./images/bg-pattern.png');
+  background-color: #d7d7d7;
 }
 
 input {
   display: inline-block;
   font-size: 20px;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 10px; 
   outline: transparent;
 }
+h1 {
+  font-size: 55px;
+  text-align: center;
+}
 
-.contriesContainer{
+.contriesContainer {
   display: inline-block;
 }
 
 .country-card {
   display: flex;
-  outline:red;
 }
 .country-description {
   margin-right: 50px;
 }
 .flag {
   display: block;
-
 }
-.country-text{
+.country-text {
   font-size: 24px;
 }
-h1{
-  font-size: 55px;
-  text-align: center;
-}
-/* img {
-  border: 1px solid grey;
-} */
