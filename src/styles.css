@@ -17,6 +17,7 @@ body {
    * CSS image reference example.
    */
     background-image: url('./images/bg-pattern.png');
+    background-color: #D7D7D7;
 }
 
 input {
@@ -49,6 +50,6 @@ h1{
   font-size: 55px;
   text-align: center;
 }
-img {
+/* img {
   border: 1px solid grey;
-}
+} */
