@@ -1,7 +1,7 @@
 import refs from '../js/refs.js';
 import countriesList from '../templates/countries-list.hbs';
 import oneCountry from '../templates/one-country.hbs';
-import error from './notifications.js';
+import { errorQuerySpecific } from './notifications.js';
 
 function updateMarkup(data) {
   if (data.length === 1) {
@@ -13,10 +13,7 @@ function updateMarkup(data) {
     return;
   }
   if (data.length > 10) {
-    error({
-      title: 'Too many matches found!',
-      text: 'Please, create more specific query',
-    });
+    errorQuerySpecific();
   }
 }
 function MarkupOne(data) {
